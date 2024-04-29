@@ -1,6 +1,9 @@
 import tkinter as tk
 import subprocess
 import os
+import webbrowser
+import platform
+
 
 class GUI:
     def __init__(self):
@@ -33,19 +36,31 @@ class GUI:
 
         self.button_frame.pack(padx=5, pady=5, fill='x')
 
-        self.btn3 = tk.Button(self.root, text='Github', command=self.github)
+        self.btn3 = tk.Button(self.root, text='Github', command=github)
         self.btn3.pack(padx=5, pady=5, fill='x')
 
         self.root.mainloop()
 
-    def github(self):
-        os.system("start \"\" https://github.com/Burritoless-Codec/bDownloader")
+
+def github():
+    webbrowser.open('https://github.com/Burritoless-Codec/bDownloader', new=2)
 
 
 def show_explorer():
-    create_downloads_directory()
-    cwd = os.getcwd()
-    subprocess.Popen(f'explorer /enter,"{cwd}\\downloads"')
+    downloads_path = os.path.join(os.getcwd(), 'downloads')
+
+    if platform.system() == 'Windows':
+        subprocess.Popen(f'explorer /enter,"{downloads_path}"')
+    elif platform.system() == 'Linux':
+        try:
+            subprocess.Popen(['xdg-open', downloads_path])
+        except FileNotFoundError:
+            print(
+                'Failed to open file manager.')
+    elif platform.system() == 'Darwin':  # macOS
+        subprocess.Popen(['open', downloads_path])
+    else:
+        print('Unsupported operating system.')
 
 
 def create_downloads_directory():
