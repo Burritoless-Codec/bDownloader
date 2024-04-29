@@ -4,12 +4,21 @@ import os
 
 def main():
     create_downloads_directory()
-    url = input('Enter URL: ')
-    filename = input('Save file as: ')
-    if filename == '':
-        filename = input('Please enter a file name: ')
+    urls_input = input('Enter URLs (comma-separated): ')
+    filenames_input = input('Enter filenames (comma-separated): ')
 
-    download_file(url, filename)
+    urls = [url.strip() for url in urls_input.split(',')]
+    filenames = [filename.strip() for filename in filenames_input.split(',')]
+
+    if len(urls) != len(filenames):
+        print("Number of URLs and filenames must be the same.")
+        return
+
+    for url, filename in zip(urls, filenames):
+        if filename == '':
+            filename = input(f"Please enter a filename for URL '{url}': ")
+
+        download_file(url, filename)
 
 
 def create_downloads_directory():
@@ -34,10 +43,8 @@ def download_file(url, filename):
     try:
         urlretrieve(url, save_path)
         print(f"File downloaded successfully to '{save_path}'")
-        main()
     except Exception as e:
         print(f"Error downloading file: {e}")
-        main()
 
 
 def get_new_filename():

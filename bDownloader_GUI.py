@@ -33,10 +33,13 @@ class GUI:
 
         self.button_frame.pack(padx=5, pady=5, fill='x')
 
-        self.btn3 = tk.Button(self.root, text='Github')
+        self.btn3 = tk.Button(self.root, text='Github', command=self.github)
         self.btn3.pack(padx=5, pady=5, fill='x')
 
         self.root.mainloop()
+
+    def github(self):
+        os.system("start \"\" https://github.com/Burritoless-Codec/bDownloader")
 
 
 def show_explorer():
