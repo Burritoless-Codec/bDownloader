@@ -11,19 +11,23 @@ class GUI:
 
         self.root.title('bDownloader GUI')
         self.root.resizable(width=False, height=False)
-        self.root.geometry('600x290')
+        self.root.geometry('')
 
         self.label_1 = tk.Label(self.root, text='Urls: Only 1 entry per line.', font=15)
         self.label_1.pack(anchor=tk.W, padx=10)
 
-        self.url_text = tk.Text(self.root, height=5)
-        self.url_text.pack(padx=10)
+        self.v = tk.Scrollbar(self.root, orient='vertical')
+        self.v.pack(side='right', fill='y')
 
-        self.label_2 = tk.Label(self.root, text='Filenames: Only 1 entry per line.', font=15)
-        self.label_2.pack(anchor=tk.W, padx=10)
+        self.url_text = tk.Text(self.root, height=8, yscrollcommand=self.v.set)
+        self.v.config(command=self.url_text.yview)
+        self.url_text.pack(padx=10, fill='both')
 
-        self.filename_text = tk.Text(self.root, height=5)
-        self.filename_text.pack(padx=10)
+        # self.label_2 = tk.Label(self.root, text='Filenames: Only 1 entry per line.', font=15)
+        # self.label_2.pack(anchor=tk.W, padx=10)
+
+        #self.filename_text = tk.Text(self.root, height=5)
+        #self.filename_text.pack(padx=10)
 
         self.button_frame = tk.Frame(self.root)
         self.button_frame.columnconfigure(0, weight=1)
