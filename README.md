@@ -16,7 +16,9 @@ bDownloader is a GUI and command-line tool for downloading files from URLs. It a
 - platform (standard library)
 ## Built and Tested
 Made with ![Static Badge](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)
-Tested on ![Static Badge](https://img.shields.io/badge/Windows-10-Green?style=flat-square) ![Static Badge](https://img.shields.io/badge/Debian-12-Green?style=flat-square) ![Static Badge](https://img.shields.io/badge/Ubuntu-24.04%20LTS-Purple?style=flat-square)
+
+Tested on ![Static Badge](https://img.shields.io/badge/Windows-10%2022H2-Green?style=flat-square)
+ ![Static Badge](https://img.shields.io/badge/Debian-12-Green?style=flat-square) ![Static Badge](https://img.shields.io/badge/Ubuntu-24.04%20LTS-Red?style=flat-square&labelColor=gray&color=red)
 
 
 ## Installation
