@@ -1,12 +1,12 @@
 # bDownloader
 
 ## Description
-bDownloader is a GUI and command-line tool for downloading files from URLs. It allows users to input URLs, manage downloads, and view downloaded files.
+bDownloader is a GUI and command-line tool for bulk downloading files from URLs. It allows users to input URLs, manage downloads, and view downloaded files.
 
 ## Features
 - GUI interface for easy URL input and download management.
-- Command-line interface for quick batch downloads.
 - Supports viewing downloaded files in the file explorer.
+- Command-line interface for quick batch downloads.
 
 ## Requirements
 - Python 3.x
