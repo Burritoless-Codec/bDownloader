@@ -15,10 +15,22 @@ bDownloader is a GUI and command-line tool for downloading files from URLs. It a
 - urllib (standard library)
 - platform (standard library)
 ## Built and Tested
-Made with ![Static Badge](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)
+### Made with 
+![Static Badge](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)
 
-Tested on ![Static Badge](https://img.shields.io/badge/Windows-10%2022H2-Green?style=flat-square)
- ![Static Badge](https://img.shields.io/badge/Debian-12-Green?style=flat-square) ![Static Badge](https://img.shields.io/badge/Ubuntu-24.04%20LTS-Red?style=flat-square&labelColor=gray&color=red)
+### Tested on 
+#### Windows
+![Static Badge](https://img.shields.io/badge/Windows-10%2022H2-Green?style=flat-square)
+
+#### Linux
+
+ ![Static Badge](https://img.shields.io/badge/Debian-12-Green?style=flat-square) ![Static Badge](https://img.shields.io/badge/Ubuntu-24.04%20LTS-Green?style=flat-square)
+
+I have found it necessary to install the Tkinter package (python3-tk) in order to enable the graphical user interface (GUI) functionality on my systems. This step may be specific to my setup, but it ensures proper functionality of the GUI-based application.
+```bash
+sudo apt-get update
+sudo apt-get install python3-tk
+```
 
 
 ## Installation
